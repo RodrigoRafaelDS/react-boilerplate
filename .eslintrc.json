@@ -20,6 +20,15 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "max-lines": [
+      "error",
+      300
+    ],
+    "complexity": [
+      "error",
+      5
+    ],
     "indent": [
       "error",
       "tab"
