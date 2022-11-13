@@ -4,7 +4,7 @@ const App = () => {
 
 	return (
 		<div>
-      opa 2
+      opa
 		</div>
 	)
 }
