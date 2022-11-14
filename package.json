@@ -18,7 +18,8 @@
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,js}": [
-			"eslint"
+			"eslint",
+			"prettier"
 		]
 	},
 	"dependencies": {
