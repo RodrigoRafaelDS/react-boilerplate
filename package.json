@@ -14,7 +14,7 @@
 		"test": "vitest",
 		"coverage": "vitest run --coverage",
 		"generate": "plop",
-		"pre-commit": "lint-staged",
+		"pre-commit": "lint-staged commit",
 		"pre-push": "lint test"
 	},
 	"lint-staged": {
