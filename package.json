@@ -14,7 +14,7 @@
 		"coverage": "vitest run --coverage",
 		"generate": "plop",
 		"pre-commit": "lint-staged",
-		"pre-push": "test"
+		"pre-push": "lint:fix vitest"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,js}": [
