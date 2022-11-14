@@ -1,0 +1,29 @@
+import React from 'react';
+import { Story } from '@storybook/react';
+import {{pascalCase componentName}}, { {{pascalCase componentName}}Props } from './{{dashCase componentName}}';
+import ProviderStories from '../provider-stories/provider-stories';
+
+export default {
+  title: `Components/{{pascalCase componentName}}`,
+  component: {{pascalCase componentName}},
+  //argTypes: {
+   //  propName: {
+   //  defaultValue: 'value',
+   //  description: 'description of this prop'
+   //}
+  //}
+};
+
+export const {{pascalCase componentName}}: Story<{{pascalCase componentName}}Props> = args =>
+<ProviderStories>
+    <{{pascalCase componentName}} {...args} />
+</ProviderStories>;
+
+// eslint-disable-next-line functional/immutable-data
+  {{pascalCase componentName}}.parameters = {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/TSyxQ9CIjTy0YG8aEcDqwC/Sugarcane-Borer?node-id=16213%3A303228',
+      allowFullscreen: true
+    }
+  };

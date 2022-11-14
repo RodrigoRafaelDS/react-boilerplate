@@ -1,13 +1,47 @@
 import 'antd/dist/antd.css'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
-const App = () => {
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ErrorBoundary } from './ErrorBundaryComponent'
+import MainLayout from './pages/main-layout/main-layout.container'
+import AppRoutes from './routes/AppRoutes'
 
+export const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+			retry: false,
+			cacheTime: Infinity
+		},
+		mutations: {
+			retry: false
+		}
+	}
+})
+
+const App: React.FC = () => {
 	return (
-		<div>
-      opa
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<ReactQueryDevtools
+				initialIsOpen={false}
+				toggleButtonProps={{
+					style: {
+						marginLeft: '18px',
+						marginBottom: '60px'
+					}
+				}}
+			/>
+			<BrowserRouter>
+				<MainLayout>
+					<ErrorBoundary>
+						<AppRoutes />
+					</ErrorBoundary>
+				</MainLayout>
+			</BrowserRouter>
+		</QueryClientProvider>
 	)
 }
-
 
 export default App
