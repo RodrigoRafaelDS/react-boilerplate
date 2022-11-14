@@ -16,4 +16,4 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Test and coverage
-        run: yarn jest --coverage
+        run: yarn coverage
