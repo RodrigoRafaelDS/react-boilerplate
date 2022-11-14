@@ -1,64 +1,57 @@
 {
-  "name": "react-boilerplate",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "commit": "git-cz",
-    "preview": "vite preview",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged",
-    "lint": "./node_modules/.bin/eslint 'src/**/*.{ts,tsx,js}'",
-    "lint:fix": "yarn lint --fix",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "generate": "plop"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx,js}": [
-      "eslint"
-    ]
-  },
-  "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@tanstack/react-query": "^4.15.1",
-    "@tanstack/react-query-devtools": "^4.16.0",
-    "antd": "^4.24.1",
-    "axios": "^1.1.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3",
-    "styled-components": "^5.3.6"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.2.0",
-    "@commitlint/config-conventional": "^17.2.0",
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
-    "@vitejs/plugin-react": "^2.2.0",
-    "commitizen": "^4.2.5",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.31.10",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "plop": "^3.1.1",
-    "prettier": "^2.7.1",
-    "typescript": "*",
-    "vite": "^3.2.3",
-    "vitest": "^0.25.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+	"name": "react-boilerplate",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"prepare": "husky install",
+		"lint-staged": "lint-staged",
+		"lint": "./node_modules/.bin/eslint 'src/**/*.{ts,tsx,js}'",
+		"lint:fix": "yarn lint --fix",
+		"test": "vitest",
+		"coverage": "vitest run --coverage",
+		"generate": "plop"
+	},
+	"lint-staged": {
+		"src/**/*.{ts,tsx,js}": [
+			"eslint"
+		]
+	},
+	"dependencies": {
+		"@ant-design/icons": "^4.7.0",
+		"@tanstack/react-query": "^4.15.1",
+		"@tanstack/react-query-devtools": "^4.16.0",
+		"antd": "^4.24.1",
+		"axios": "^1.1.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.4.3",
+		"styled-components": "^5.3.6"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.2.0",
+		"@commitlint/config-conventional": "^17.2.0",
+		"@types/react": "^18.0.24",
+		"@types/react-dom": "^18.0.8",
+		"@typescript-eslint/eslint-plugin": "^5.42.1",
+		"@typescript-eslint/parser": "^5.42.1",
+		"@vitejs/plugin-react": "^2.2.0",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "^8.0.1",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-standard-with-typescript": "^23.0.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-n": "^15.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-react": "^7.31.10",
+		"husky": "^8.0.2",
+		"lint-staged": "^13.0.3",
+		"plop": "^3.1.1",
+		"prettier": "^2.7.1",
+		"typescript": "*",
+		"vite": "^3.2.3",
+		"vitest": "^0.25.1"
+	}
 }
