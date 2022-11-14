@@ -12,9 +12,7 @@
 		"lint:fix": "yarn lint --fix",
 		"test": "vitest",
 		"coverage": "vitest run --coverage",
-		"generate": "plop",
-		"pre-commit": "lint-staged",
-		"pre-push": "lint-staged && test"
+		"generate": "plop"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,js}": [
