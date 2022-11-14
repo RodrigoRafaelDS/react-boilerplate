@@ -1,4 +1,4 @@
-name: Build
+name: BOILERPLATE
 on:
   push:
     branches:
@@ -6,31 +6,14 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened ]
 jobs:
-  build:
-  name: someName
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Install dependencies
-      run: yarn
-    - name: Build
-      run: yarn build
-
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
+  tests:
+    runs-on: ubunto-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: test
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@2.2.0
       - name: Install dependencies
-        run: yarn
+        run: yarn install
       - name: Test and coverage
-        run: yarn coverage
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
+        run: yarn jest --coverage
