@@ -7,7 +7,7 @@ on:
     types: [ opened, synchronize, reopened ]
 jobs:
   build:
-  name: buildApp
+  name: someName
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
@@ -17,7 +17,6 @@ jobs:
       run: yarn
     - name: Build
       run: yarn build
-
 
   sonarcloud:
     name: SonarCloud
