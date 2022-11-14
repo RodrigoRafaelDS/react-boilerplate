@@ -19,3 +19,17 @@ jobs:
         run: yarn install
       - name: Test and coverage
         run: yarn coverage
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
