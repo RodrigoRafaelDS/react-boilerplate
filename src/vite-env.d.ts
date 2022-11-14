@@ -1,1 +1,2 @@
-/// <reference types="vite/client" />
+/* eslint-disable linebreak-style */
+//  <reference types="vite/client" />
