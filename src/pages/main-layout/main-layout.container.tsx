@@ -31,7 +31,11 @@ const items: MenuItem[] = [
 
 ]
 
-const MainLayout: React.FC = ({ children }) => {
+interface MainLayoutProps {
+  children: React.ReactElement;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 	const [collapsed, setCollapsed] = useState(false)
 
 	return (

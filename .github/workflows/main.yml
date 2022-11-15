@@ -7,13 +7,29 @@ on:
     types: [ opened, synchronize, reopened ]
 jobs:
   tests:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name: test
         uses: actions/checkout@v2
       - name: Setup Node.js
-        uses: actions/setup-node@2.2.0
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn install
       - name: Test and coverage
-        run: yarn jest --coverage
+        run: yarn coverage
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build

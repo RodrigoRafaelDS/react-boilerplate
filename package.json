@@ -33,11 +33,14 @@
 		"styled-components": "^5.3.6"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
 		"@types/react": "^18.0.24",
 		"@types/react-dom": "^18.0.8",
 		"@typescript-eslint/eslint-plugin": "^5.42.1",
 		"@typescript-eslint/parser": "^5.42.1",
 		"@vitejs/plugin-react": "^2.2.0",
+		"@vitest/coverage-c8": "^0.25.2",
 		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard-with-typescript": "^23.0.0",
@@ -46,6 +49,8 @@
 		"eslint-plugin-promise": "^6.0.0",
 		"eslint-plugin-react": "^7.31.10",
 		"husky": "^8.0.2",
+		"jest-styled-components": "^7.1.1",
+		"jsdom": "^20.0.2",
 		"lint-staged": "^13.0.3",
 		"plop": "^3.1.1",
 		"prettier": "^2.7.1",
