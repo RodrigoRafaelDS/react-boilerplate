@@ -11,10 +11,12 @@ export default defineConfig({
 		globals: true,
 		environment: 'jsdom',
 		root: './src',
-		setupFiles: ['./setup.ts'],
+		setupFiles: ['./src/setup.ts'],
 		coverage: {
 			provider: 'c8',
-			reporter: ['text', 'json', 'html']
+			all: true,
+			include: ['src/**/*.{tsx,ts}'],
+			reporter: ['lcov', 'html', 'text', 'json']
 		}
 	}
 })
