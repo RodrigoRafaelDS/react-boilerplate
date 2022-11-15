@@ -13,7 +13,9 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "generate": "plop",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js}": [
@@ -34,6 +36,14 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.24",
@@ -42,6 +52,7 @@
     "@typescript-eslint/parser": "^5.42.1",
     "@vitejs/plugin-react": "^2.2.0",
     "@vitest/coverage-c8": "^0.25.2",
+    "babel-loader": "^8.3.0",
     "cypress": "^11.0.1",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
