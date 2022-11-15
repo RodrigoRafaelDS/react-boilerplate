@@ -35,6 +35,15 @@
     "semi": [
       "error",
       "never"
-    ]
+    ],
+    "max-lines": [
+      "error",
+      300
+    ],
+    "complexity": [
+      "error",
+      6
+    ],
+    "no-inline-comments": "error"
   }
 }
