@@ -19,6 +19,11 @@ jobs:
         run: yarn install
       - name: Test and coverage
         run: yarn coverage
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
