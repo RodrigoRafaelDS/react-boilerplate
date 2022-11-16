@@ -1,58 +1,42 @@
-import { PieChartOutlined, UserOutlined } from '@ant-design/icons'
-import type { MenuProps } from 'antd'
 import { Layout, Menu } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Header, Content, Footer } = Layout
 
-type MenuItem = Required<MenuProps>['items'][number];
-
-function getItem(
-	label: React.ReactNode,
-	key: React.Key,
-	icon?: React.ReactNode,
-	children?: MenuItem[]
-): MenuItem {
-	return {
-		key,
-		icon,
-		children,
-		label
-	} as MenuItem
-}
-
-const items: MenuItem[] = [
-	getItem('dashboard', '1', <PieChartOutlined />),
-	getItem('option', 'sub1', <UserOutlined />, [
-		getItem('1', '3'),
-		getItem('2', '4'),
-		getItem('3', '5')
-	])
-
-]
+const itemsValues = [{ key: '/dashboard', label: 'Dashboard' }, { key: 1, label: 'Page 2' }]
 
 interface MainLayoutProps {
   children: React.ReactElement;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-	const [collapsed, setCollapsed] = useState(false)
+	const navigate = useNavigate()
 
+	const handleMenuClick = (path: string) => {
+		navigate(path)
+	}
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
-			<Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
-				<div className='logo' style={{ padding: 21, backgroundColor: '#fff' }}>LOGO</div>
-				<Menu theme='dark' defaultSelectedKeys={['1']} mode='inline' items={items} />
-			</Sider>
-			<Layout className='site-layout' style={{ backgroundColor: 'blue' }}>
-				<Header className='site-layout-background'
-					style={{ padding: 0, backgroundColor: '#fff' }}>HEADER</Header>
+			<Layout className='site-layout' style={{ backgroundColor: '#aaa' }}>
+				<Header>
+					<Menu
+						theme='dark'
+						mode='horizontal'
+						defaultSelectedKeys={['/dashboard']}
+						items={itemsValues}
+						onSelect={({ key }) => handleMenuClick(key)}
+					/>
+				</Header>
 				<Content style={{ margin: '16px', backgroundColor: '#fff' }}>
 					<div className='site-layout-background' style={{ padding: 24, minHeight: 360 }}>
 						{children}
 					</div>
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>REACT BOILERPLATE</Footer>
+				<Footer style={{ textAlign: 'center' }}>Modern React Boilerplate
+          ©2022 Created by
+          Rodrigo
+          Sousa</Footer>
 			</Layout>
 		</Layout>
 	)

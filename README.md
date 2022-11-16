@@ -1,8 +1,8 @@
+## *Project in progress* 🛠️
+
 # MODERN REACT BOILERPLATE
 
-## Project under development 🛠️
-
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=RodrigoRafaelDS_react-boilerplate)
+### Quality code
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=RodrigoRafaelDS_react-boilerplate&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=RodrigoRafaelDS_react-boilerplate)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=RodrigoRafaelDS_react-boilerplate&metric=coverage)](https://sonarcloud.io/summary/new_code?id=RodrigoRafaelDS_react-boilerplate)

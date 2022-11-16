@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Dashboard: React.FC = () => {
-	return <div className=''>DASHBOARD</div>
+	return <div>Dashboard</div>
 }
 
 export default Dashboard

@@ -28,8 +28,7 @@ const App: React.FC = () => {
 				initialIsOpen={false}
 				toggleButtonProps={{
 					style: {
-						marginLeft: '18px',
-						marginBottom: '60px'
+						margin: 12
 					}
 				}}
 			/>
