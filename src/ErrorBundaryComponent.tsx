@@ -1,4 +1,5 @@
 import React from 'react'
+import ErrorScreens from './ErrorScreens'
 
 export class ErrorBoundary extends React.Component<any, any> {
 	constructor(props: any) {
@@ -16,7 +17,7 @@ export class ErrorBoundary extends React.Component<any, any> {
 
 	render() {
 		if (this.state.hasError) {
-			return <div>Error</div>
+			return <ErrorScreens errorType={500} subTitle='Ops!' />
 		}
 		return this.props.children
 	}
