@@ -20,6 +20,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "no-console": "warn",
     "indent": [
       "error",
       "tab"
@@ -44,7 +45,6 @@
       "error",
       6
     ],
-    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": "error"
   }
 }
