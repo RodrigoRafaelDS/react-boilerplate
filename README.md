@@ -23,4 +23,26 @@ Mainly libraries used and their current versions:
 
 ...
 
+# Software quality
+
+## CI/CD
+
+https://sonarcloud.io/
+
+https://github.com/features/actions
+
+https://vercel.com/
+
+## Lint
+
+https://eslint.org/
+
+https://github.com/okonet/lint-staged
+
+## Testing
+
+https://vitest.dev/
+
+https://playwright.dev/
+
 
