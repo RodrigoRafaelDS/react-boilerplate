@@ -1,4 +1,3 @@
-import 'antd/dist/antd.css'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -10,7 +9,7 @@ import AppRoutes from './routes/AppRoutes'
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
-		queries: {
+		queries: { 
 			refetchOnWindowFocus: false,
 			retry: false,
 			cacheTime: Infinity

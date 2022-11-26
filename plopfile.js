@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = plop => {
 	const generateComponentActions = IsSDComponent => {
 		const localePath = IsSDComponent
