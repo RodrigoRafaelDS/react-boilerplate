@@ -6,10 +6,11 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ErrorBoundary } from './ErrorBundaryComponent'
 import MainLayout from './pages/main-layout/main-layout.container'
 import AppRoutes from './routes/AppRoutes'
+import './reset.css'
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
-		queries: { 
+		queries: {
 			refetchOnWindowFocus: false,
 			retry: false,
 			cacheTime: Infinity
