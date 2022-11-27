@@ -21,7 +21,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js}": [
-      "eslint"
+      "eslint",
+      "playwright"
     ]
   },
   "dependencies": {
