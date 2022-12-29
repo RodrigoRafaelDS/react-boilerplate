@@ -1,11 +1,6 @@
 version: "3.8"
 services:
-  client:
-    stdin_open: true
-    build:
-      context: .
-      dockerfile: Dockerfile
+  react-docker-boilerplate:
+    build: .
     ports:
-     - "4000:4000"
-#    volumes:
-#      - "/Users/rodri/Desktop/projects/react-boilerplate/build"
+      - "3221:3221"

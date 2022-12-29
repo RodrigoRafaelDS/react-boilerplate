@@ -1,11 +1,1 @@
-Dockerfile
-.dockerignore
-.gitignore
-README.md
 node_modules
-.github
-.husky
-.storybook
-.boilerplate-tests
-playwright-report
-plop-templates
