@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const { Header, Content, Footer } = Layout
 
-const itemsValues = [{ key: '/dashboard', label: 'Dashboard' }, { key: 1, label: 'Page 2' }]
+const itemsValues = [{ key: '/', label: 'Dashboard' }, { key: 1, label: 'Page 2' }]
 
 interface MainLayoutProps {
   children: React.ReactElement;
@@ -23,7 +23,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 					<Menu
 						theme='dark'
 						mode='horizontal'
-						defaultSelectedKeys={['/dashboard']}
+						defaultSelectedKeys={['/']}
 						items={itemsValues}
 						onSelect={({ key }) => handleMenuClick(key)}
 					/>

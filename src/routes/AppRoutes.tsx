@@ -12,7 +12,7 @@ const AppRoutes: React.FC = () => {
 			<Suspense fallback={<div>Suspense</div>}>
 				<Routes>
 					<Route path='/*' element={<ErrorScreens errorType={404} subTitle='Page not found' />} />
-					<Route path='/dashboard' element={<Dashboard />} />
+					<Route path='/' element={<Dashboard />} />
 				</Routes>
 			</Suspense>
 		</ConfigProvider>

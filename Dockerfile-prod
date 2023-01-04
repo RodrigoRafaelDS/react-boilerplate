@@ -1,0 +1,9 @@
+FROM node:alpine as build
+WORKDIR /Users/app
+COPY package.json .
+RUN yarn install
+COPY . ./
+RUN yarn build
+FROM nginx:alpine
+COPY --from=build /Users/app/dist /Users/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]

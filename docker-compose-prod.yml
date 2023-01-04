@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  react-boilerplate-docker-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
