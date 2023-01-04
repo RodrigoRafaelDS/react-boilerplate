@@ -2,8 +2,6 @@ import { test } from '@playwright/test'
 
 test('test', async ({ page }) => {
 	await page.goto('http://localhost:5173/')
-	await page.getByText('Page 2').click()
-	await page.getByText('Dashboard').click()
 	await page.getByRole('main').getByText('Dashboard').dblclick()
 	await page.getByRole('button', { name: 'Open React Query Devtools' }).click()
 	await page.getByPlaceholder('Filter').click()
