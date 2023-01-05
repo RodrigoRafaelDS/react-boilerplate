@@ -38,3 +38,17 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [ tests, build ]
+    steps:
+      - name: deploy
+        uses: actions/checkout@v2
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          sever-dir: public_html/boilerplateTest
