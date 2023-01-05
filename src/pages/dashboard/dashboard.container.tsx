@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
 	}
 	return <div>
 		<Button onClick={() => handleAmplitude()}>Amplitude test</Button>
-		<Button onClick={() => methodDoesNotExist()}>Sentry test</Button>
+		{/*<Button onClick={() => methodDoesNotExist()}>Sentry test</Button>*/}
 	</div>
 }
 
