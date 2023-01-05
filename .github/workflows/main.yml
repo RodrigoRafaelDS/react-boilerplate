@@ -38,14 +38,14 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
-      - name: 📂 Sync files - ${{ secrets.FTP_SERVER }}
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: public_html/
+          server-dir: /home/u750505398/domains/rodrigords.com/public_html/
           protocol: ftps
           port: 21
 
