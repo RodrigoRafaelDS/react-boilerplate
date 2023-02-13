@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+}
+
+.image-title {
+    margin-top: 8px;
+}
+
+.loading {
+    margin: 16px;
+}
+
+.error {
+    margin: 16px;
+    color: red;
+}

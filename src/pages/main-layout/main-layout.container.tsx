@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const { Header, Content, Footer } = Layout
 
-const itemsValues = [{ key: '/', label: 'Dashboard' }, { key: 1, label: 'Page 2' }]
+const itemsValues = [{ key: '/', label: 'UploadImage' }, { key: 'Dashboard', label: 'Dashboard' }]
 
 interface MainLayoutProps {
   children: React.ReactElement;

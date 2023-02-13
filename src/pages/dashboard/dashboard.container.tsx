@@ -1,19 +1,80 @@
-import React from 'react'
-import * as amplitude from '@amplitude/analytics-browser'
-import { Button } from 'antd'
+import React, { useState } from 'react'
+import axios from 'axios'
+import { Button, Form, Input, Result, Spin } from 'antd'
 
+const API_KEY = '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'
+const baseURL = 'https://api.openai.com/v1/engines/davinci/completions'
 
 const Dashboard: React.FC = () => {
-	const handleAmplitude = () => {
-		console.log('SD -> Amplitude')
+	const [prompt, setPrompt] = useState('')
+	const [story, setStory] = useState('')
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState(false)
 
-		amplitude.init('edb7f41d37875141c5d229b74b935016')
-		amplitude.track('Button Clicked')
+	const generateStory = async (prompt: string) => {
+		setLoading(true)
+		setError(false)
+		const options = {
+			prompt: prompt,
+			max_tokens: 1000,
+			temperature: 0.5,
+			n: 1
+		}
+
+		try {
+			const response = await axios.post(baseURL, options, {
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${API_KEY}`
+				}
+			})
+			setStory(response.data.choices[0].text)
+		} catch (e) {
+			setError(true)
+		} finally {
+			setLoading(false)
+		}
 	}
-	return <div>
-		<Button onClick={() => handleAmplitude()}>Amplitude test</Button>
-		{/*<Button onClick={() => methodDoesNotExist()}>Sentry test</Button>*/}
-	</div>
+
+	return (
+		<div>
+			<h1>Story Generator</h1>
+			<Form
+				onFinish={() => {
+					generateStory(prompt)
+				}}
+			>
+				<Form.Item
+					name='prompt'
+					rules={[{ required: true, message: 'Please enter a prompt!' }]}
+				>
+					<Input placeholder='Write a short story about a robot' onChange={(event) => setPrompt(event.target.value)} />
+				</Form.Item>
+				<Form.Item>
+					<Button type='primary' htmlType='submit'>
+            Generate Story
+					</Button>
+				</Form.Item>
+			</Form>
+			<div style={{ textAlign: 'center', marginTop: 20 }}>
+				{loading && <Spin size='large' tip='Loading...' />}
+				{error && (
+					<Result
+						status='error'
+						title
+						subTitle='Sorry, there was an error generating the story.'
+					/>
+				)}
+				{!loading && !error && story !== '' && (
+					<div>
+						<h2>Generated Story:</h2>
+						<p>{story}</p>
+					</div>
+				)}
+			</div>
+		</div>
+	)
 }
+
 
 export default Dashboard
